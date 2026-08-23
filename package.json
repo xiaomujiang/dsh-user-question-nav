@@ -1,0 +1,43 @@
+{
+  "name": "dsh-user-question-nav",
+  "version": "0.1.0",
+  "description": "在对话中快速定位上一个/下一个用户问题",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./invariant": "./lib/invariant.js",
+    "./client": "./lib/client.js",
+    "./client-registry": "./lib/client-registry.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/invariant.js",
+    "lib/client.js",
+    "lib/client-registry.js",
+    "dsh.plugin.json",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-runtime"],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf lib && tsdown",
+    "prepublishOnly": "pnpm build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "cordis": "^4.0.0-rc.8",
+    "tsdown": "^0.22.2",
+    "typescript": "^5.6.0"
+  }
+}
