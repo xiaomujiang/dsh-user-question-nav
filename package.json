@@ -43,6 +43,7 @@
   },
   "scripts": {
     "build": "rm -rf lib && tsdown",
+    "prepare": "pnpm build",
     "prepublishOnly": "pnpm build",
     "typecheck": "tsc --noEmit"
   },

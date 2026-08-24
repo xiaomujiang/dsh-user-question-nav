@@ -12,49 +12,49 @@
 
 目标消息会被滚动到视口中间，方便阅读上下文。
 
-## 前置条件
-
-| 依赖 | 版本要求 | 说明 |
-|------|----------|------|
-| macOS | — | 当前仅支持 macOS |
-| [DeepSeek Harness Desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) | 最新版 | 桌面端客户端，**必须先安装并运行过一次** |
-| Node.js | ≥ 18 | 项目编译目标 ES2022 |
-| pnpm | 最新版 | 包管理器 |
-| git | 最新版 | 用于克隆仓库 |
-
 ## 安装
 
-### 第一步：安装 DeepSeek Harness Desktop
+### 方式一：从 npm 一键安装（推荐）
 
-如果还没安装 DSH Desktop，先到 [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) 下载安装并**运行一次**（让它初始化 profile 目录）。
-
-### 第二步：克隆并安装插件
+要求：已安装并运行过一次 [DeepSeek Harness Desktop](https://github.com/anywhere-labs/deepseek-harness-desktop)。
 
 ```bash
-# 克隆仓库
-git clone git@github.com:xiaomujiang/dsh-user-question-nav.git
-cd dsh-user-question-nav
-
-# 安装依赖
-pnpm install
-
-# 构建
-pnpm build
+dsh plugin --profile desktop add dsh-user-question-nav
 ```
 
-### 第三步：安装到 DSH Desktop
+完成后 **Cmd+Q** 退出 DSH Desktop，重新打开。
 
-双击 `install-user-question-nav.command`，脚本会自动完成构建、复制、挂载。完成后 **Cmd+Q** 退出 DSH Desktop，重新打开。
+### 方式二：从源码安装（开发者）
+
+适合修改源码、二次开发：
+
+```bash
+git clone git@github.com:xiaomujiang/dsh-user-question-nav.git
+cd dsh-user-question-nav
+pnpm install && pnpm build
+./install-user-question-nav.command
+# Cmd+Q 退出 DSH Desktop，重新打开
+```
 
 ## 升级
 
-`git pull` 后双击 `install-user-question-nav.command`，脚本会重新构建并覆盖安装。完成后重启 DSH Desktop。
+```bash
+dsh plugin --profile desktop add dsh-user-question-nav@latest
+```
+
+完成后重启 DSH Desktop。
+
+## 卸载
+
+```bash
+dsh plugin --profile desktop remove dsh-user-question-nav
+```
 
 ## 效果预览
 
-对话区域右侧出现 ⏫⏬ 双箭头按钮，点击即可跳转到上一个/下一个用户问题。
+![效果预览](docs/screenshot.png)
 
-> 截图位置：`docs/screenshot.png`（自行保存截图到此路径即可显示）
+对话区域右侧的 ⏫⏬ 双箭头按钮，点击即可跳转到上一个/下一个用户问题。
 
 ## 实现原理
 
@@ -115,7 +115,7 @@ dsh-user-question-nav/
 
 ## 贡献
 
-欢迎提 Issue 和 PR！
+欢迎提 Issue和 PR！
 
 - **Bug 报告**：使用 [Bug 报告模板](https://github.com/xiaomujiang/dsh-user-question-nav/issues/new?template=bug_report.md)
 - **功能请求**：使用 [功能请求模板](https://github.com/xiaomujiang/dsh-user-question-nav/issues/new?template=feature_request.md)
