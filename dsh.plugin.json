@@ -1,6 +1,6 @@
 {
   "id": "dsh-external/dsh-user-question-nav",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "main": "./lib/index.js",
   "description": "在对话中快速定位上一个/下一个用户问题，点击按钮自动滚动到对应位置",
   "engines": {

@@ -1,6 +1,6 @@
 {
   "name": "dsh-user-question-nav",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "在 DeepSeek Harness 对话中快速定位上一个/下一个用户问题，浮动 ⏫⏬ 按钮一键跳转",
   "keywords": [
     "dsh",
@@ -45,7 +45,9 @@
     },
     "client": {
       "immediately": true,
-      "inject": ["@deepseek-ai/dsh-client-runtime"],
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
       "platform": "web"
     }
   },
