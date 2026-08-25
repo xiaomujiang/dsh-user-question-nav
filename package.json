@@ -1,6 +1,6 @@
 {
   "name": "dsh-user-question-nav",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "在 DeepSeek Harness 对话中快速定位上一个/下一个用户问题，浮动 ⏫⏬ 按钮一键跳转",
   "keywords": [
     "dsh",
@@ -14,14 +14,6 @@
     "chat"
   ],
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:xiaomujiang/dsh-user-question-nav.git"
-  },
-  "bugs": {
-    "url": "https://github.com/xiaomujiang/dsh-user-question-nav/issues"
-  },
-  "homepage": "https://github.com/xiaomujiang/dsh-user-question-nav#readme",
   "main": "./lib/index.js",
   "exports": {
     ".": "./lib/index.js",
