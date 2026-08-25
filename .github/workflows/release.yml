@@ -83,5 +83,5 @@ jobs:
         run: pnpm publish --dry-run --no-git-checks
 
       - name: Publish to npm
-        if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'true')
+        if: github.event_name == 'push' || github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run != 'true')
         run: pnpm publish --provenance --access public --no-git-checks
