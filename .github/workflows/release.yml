@@ -18,6 +18,9 @@ name: Release
 # Canonical reference: https://docs.npmjs.com/trusted-publishers
 
 on:
+  push:
+    tags:
+      - 'v*'
   release:
     types: [published]
   workflow_dispatch:
