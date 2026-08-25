@@ -14,6 +14,14 @@
     "chat"
   ],
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xiaomujiang/dsh-user-question-nav.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiaomujiang/dsh-user-question-nav/issues"
+  },
+  "homepage": "https://github.com/xiaomujiang/dsh-user-question-nav#readme",
   "main": "./lib/index.js",
   "exports": {
     ".": "./lib/index.js",
